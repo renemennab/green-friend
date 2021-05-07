@@ -3,7 +3,9 @@ body {
     --darkGreen: #15573f;
     --orange: #fd9872;
     --white: #fff;
+    --gray100: #f2f2f2;
     --gray200: #a8a8a8;
+    --gray300: #A9A9A9;
     --gray500: #797979;
 
     padding: 0;
@@ -117,6 +119,27 @@ body {
                     &__icon {
                         height: 65px;
                     }
+                }
+            }
+        }
+        &--results {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 75px 0;
+            background: var(--gray100);
+            &__noResultText {
+                width: 440px;
+                color: var(--gray300);
+                margin-right: 110px;
+                &--title {
+                    font-size: 45px;
+                }
+                &--subtitle {
+                    font-size: 16px;
+                    width: 220px;
+                    font-weight: normal;
                 }
             }
         }
