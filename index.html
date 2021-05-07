@@ -22,9 +22,59 @@
             <img class='header--text__arrowDown' src="images/icons/arrow-down.svg" alt="Arrow Down" />
         </div>
     </header>
-    <main>
-        <section class="selectOptions"></section>
-        <section class="results"></section>
+    <main class="main">
+        <section class="main--searchFilters">
+            <form action="" class="main--searchFilters__form">
+                <fieldset class="main--searchFilters__form--sun">
+                    <img class='main--searchFilters__form--sun__icon' src="images/illustrations/sun.png"
+                        alt="Greenthumb logo" />
+                    <label class="main--searchFilters__form--sun__label" for="sun">
+                        <strong>1.</strong>
+                        Set the amount of
+                        <strong>sunlight</strong>
+                        your plant will get.
+                    </label>
+                    <select class="main--searchFilters__form--sun__select" id="sun" name="sun">
+                        <option value="">Select...</option>
+                        <option value="no">No Sunlight</option>
+                        <option value="low">Low Sunlight</option>
+                        <option value="high">High Sunlight</option>
+                    </select>
+                </fieldset>
+                <fieldset class="main--searchFilters__form--water">
+                    <img class='main--searchFilters__form--water__icon' src="images/illustrations/wateringcan.png"
+                        alt="Greenthumb logo" />
+                    <label class="main--searchFilters__form--water__label" for="water">
+                        <strong>2.</strong>
+                        How often do you want to
+                        <strong>water</strong>
+                        your plant.
+                    </label>
+                    <select class="main--searchFilters__form--water__select" id="water" name="water">
+                        <option value="">Select...</option>
+                        <option value="rarely">Rarely</option>
+                        <option value="regularly">Regularly</option>
+                        <option value="daily">Daily</option>
+                    </select>
+                </fieldset>
+                <fieldset class="main--searchFilters__form--pets">
+                    <img class='main--searchFilters__form--pets__icon' src="images/illustrations/dog.png"
+                        alt="Greenthumb logo" />
+                    <label class="main--searchFilters__form--pets__label" for="pets">
+                        <strong>3.</strong>
+                        Do you have pets? Do they
+                        <strong>chew</strong>
+                        plants?
+                    </label>
+                    <select class="main--searchFilters__form--pets__select" id="pets" name="pets">
+                        <option value="">Select...</option>
+                        <option value="no">No/They don't care</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </fieldset>
+            </form>
+        </section>
+        <section class="main--results"></section>
     </main>
 </body>
 
