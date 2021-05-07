@@ -5,8 +5,9 @@ body {
     --white: #fff;
     --gray100: #f2f2f2;
     --gray200: #a8a8a8;
-    --gray300: #A9A9A9;
+    --gray300: #a9a9a9;
     --gray500: #797979;
+    --frameSidePadding: 20%;
 
     padding: 0;
     margin: 0;
@@ -53,7 +54,8 @@ body {
             display: flex;
             flex-direction: column;
             width: 400px;
-            margin: 50px 288px;
+            margin: 50px 0;
+            padding: 0 var(--frameSidePadding);
             &__logo {
                 width: 180px;
             }
@@ -71,12 +73,14 @@ body {
         width: 100%;
 
         &--searchFilters {
-            width: 100%;
             height: 300px;
+            padding: 0 var(--frameSidePadding);
+            box-sizing: border-box;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             &__form {
+                width:100%;
                 display: flex;
                 justify-content: center;
                 &--sun,
@@ -105,10 +109,7 @@ body {
                         padding-left: 18px;
                     }
                 }
-                &--sun,
-                &--water {
-                    margin-right: 100px;
-                }
+              
                 &--water {
                     &__icon {
                         width: 103px;
@@ -124,15 +125,14 @@ body {
         }
         &--results {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            width: 100%;
-            padding: 75px 0;
             background: var(--gray100);
+            padding: 75px var(--frameSidePadding);
+
             &__noResultText {
                 width: 440px;
                 color: var(--gray300);
-                margin-right: 110px;
                 &--title {
                     font-size: 45px;
                 }
