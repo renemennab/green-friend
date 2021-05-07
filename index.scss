@@ -28,7 +28,7 @@ body {
             &__leftLeaves {
                 content: url("images/hero/desktop/left-leaves.png");
                 position: absolute;
-                width: 862px;
+                width: 60%;
                 height: 500px;
                 left: 0px;
                 top: 0px;
@@ -38,15 +38,15 @@ body {
                 position: absolute;
                 width: 335px;
                 height: 428px;
-                left: 800px;
+                left: 55%;
                 top: 36px;
             }
             &__rightLeaves {
                 content: url("images/hero/desktop/right-leaves.png");
                 position: absolute;
-                width: 361px;
+                width: 20%;
                 height: 500px;
-                left: 1079px;
+                right: 0;
                 top: 0px;
             }
         }
