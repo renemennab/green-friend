@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+
+<head>
     <title>Front End Test - Greenthumb</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./index.scss" />
-  </head>
+</head>
 
-  <body>
-    <img src="images/icons/logo-white.svg" alt="Greenthumb" />
-  </body>
+<body>
+    <header class='header'>
+        <div class="header--background">
+            <img class='header--background__leftLeaves' alt="Wild green leaves" />
+            <img class='header--background__plantPerson' alt="Cartoon person holding a plante vase" />
+            <img class='header--background__rightLeaves' alt="Wild green leaves" />
+        </div>
+        <div class="header--text">
+            <img class='header--text__logo' src="images/icons/logo-white.svg" alt="Greenthumb logo" />
+            <h1 class="header--text__title">Find your next green friend</h1>
+            <img class='header--text__arrowDown' src="images/icons/arrow-down.svg" alt="Arrow Down" />
+        </div>
+    </header>
+    <main>
+        <section class="selectOptions"></section>
+        <section class="results"></section>
+    </main>
+</body>
+
 </html>
