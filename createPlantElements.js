@@ -1,3 +1,11 @@
+import drop1 from './images/icons/1-drop.svg'
+import drop2 from './images/icons/2-drops.svg'
+import drop3 from './images/icons/3-drops.svg'
+import lowSun from './images/icons/low-sun.svg'
+import noSun from './images/icons/no-sun.svg'
+import pet from './images/icons/pet.svg'
+import toxic from './images/icons/toxic.svg'
+
 /**
  *
  * @param {{id: number,
@@ -29,7 +37,9 @@ export default function createPlantElements(plantsArray) {
         const plantName = document.createElement('h4')
         const price = document.createElement('span')
         const iconsContainer = document.createElement('div')
-        const icon = document.createElement('img')
+        const petIcon = document.createElement('img')
+        const sunIcon = document.createElement('img')
+        const waterIcon = document.createElement('img')
 
         // append elements
         if (!index) plantContainer.className = 'staffPick'
@@ -37,7 +47,7 @@ export default function createPlantElements(plantsArray) {
         plantsContainer.append(plantContainer)
         plantContainer.append(plantImageContainer, plantName, price, iconsContainer)
         plantImageContainer.append(plantImage)
-        iconsContainer.append(icon)
+        iconsContainer.append(petIcon, sunIcon, waterIcon)
 
         // add attribute to elements
         plantImageContainer.className = 'plantImage'
@@ -47,5 +57,23 @@ export default function createPlantElements(plantsArray) {
         price.textContent = '$' + plant.price
         price.className = 'plantPrice'
         iconsContainer.className = 'plantIcons'
+
+        const sunIcons = {
+            high: lowSun,
+            low: lowSun,
+            no: noSun
+        }
+        const waterIcons = {
+            daily: drop3,
+            regularly: drop2,
+            rarely: drop1
+        }
+        console.log(plant.sun)
+        petIcon.setAttribute('src', plant.toxicity ? toxic : pet)
+        sunIcon.setAttribute('src', sunIcons[plant.sun])
+        if (plant.sun === sunIcons.low) {
+            sunIcon.setAttribute('height', '10px')
+        }
+        waterIcon.setAttribute('src', waterIcons[plant.water])
     })
 }

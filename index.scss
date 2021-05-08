@@ -1,6 +1,6 @@
 body {
     --green100: #75bc97;
-    --green200: #1E6B4E;
+    --green200: #1e6b4e;
     --green300: #15573f;
     --orange: #fd9872;
     --white: #fff;
@@ -162,31 +162,31 @@ body {
                         "staffPick staffPick . ."
                         ". . . .";
 
-                   
                     > div {
                         background: var(--white);
                         display: grid;
                         grid-template-columns: 1fr 1fr;
-                        grid-template-rows: 1fr 1fr 1fr 1fr;
+                        grid-auto-rows:6fr 1fr 1fr;
                         gap: 0px 0px;
                         padding: 20px;
                         box-sizing: border-box;
                         grid-template-areas:
                             "image image"
-                            "image image"
-                            "image image"
                             "title title"
                             "price icons";
-                            align-items: center;
+                        align-items: center;
 
                         .plantImage {
                             grid-area: image;
                             justify-self: center;
                             align-self: center;
                             height: 100%;
-                            img{
-                                width: 100%;
-                                height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            img {
+                                width: 80%;
+                                // height: 100%;
                             }
                         }
                         .plantName {
@@ -194,6 +194,8 @@ body {
                             justify-self: start;
                             align-self: center;
                             color: var(--green200);
+                            margin: 0;
+                            margin-bottom: 10px;
                         }
                         .plantPrice {
                             color: var(--green200);
@@ -203,23 +205,44 @@ body {
                         }
                         .plantIcons {
                             grid-area: icons;
+                            display: flex;
+                            justify-content: space-between;
+                            img{
+                                height: 15px;
+                            &:not(last-child){
+                                margin: 5px;
+                            }}
                         }
                     }
 
                     .staffPick {
                         grid-area: staffPick;
+                        grid-auto-rows:7fr 1fr 1fr;
+
                         grid-template-areas:
-                        "image image"
-                        "image image"
                         "image image"
                         "title price"
                         "title icons";
-
+                        .plantImage {
+                            img {
+                                width: 100%;
+                            }
+                        }
                         .plantName {
                             font-size: 35px;
+                            margin: 0;
                         }
                         .plantPrice {
                             justify-self: end;
+                            font-size: 24px;
+                        }
+                        .plantIcons{
+                            justify-content: flex-end;
+                            img{
+                                height: 25px;
+                            &:not(last-child){
+                                margin: 5px;
+                            }}
                         }
                     }
                 }
