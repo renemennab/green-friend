@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./index.scss" />
+    <script type="text/javascript" src="index.js"></script>
 </head>
 
 <body>
@@ -34,14 +35,14 @@
                         <strong>sunlight</strong>
                         your plant will get.
                     </label>
-                    <select class="main--searchFilters__form--sun__select" id="sun" name="sun">
+                    <select required class="main--searchFilters__form--sun__select" id="sun" name="sun">
                         <option value="">Select...</option>
                         <option value="no">No Sunlight</option>
                         <option value="low">Low Sunlight</option>
                         <option value="high">High Sunlight</option>
                     </select>
                 </fieldset>
-                <fieldset class="main--searchFilters__form--water">
+                <fieldset required class="main--searchFilters__form--water">
                     <img class='main--searchFilters__form--water__icon' src="images/illustrations/wateringcan.png"
                         alt="Greenthumb logo" />
                     <label class="main--searchFilters__form--water__label" for="water">
@@ -50,7 +51,7 @@
                         <strong>water</strong>
                         your plant.
                     </label>
-                    <select class="main--searchFilters__form--water__select" id="water" name="water">
+                    <select required class="main--searchFilters__form--water__select" id="water" name="water">
                         <option value="">Select...</option>
                         <option value="rarely">Rarely</option>
                         <option value="regularly">Regularly</option>
@@ -66,10 +67,10 @@
                         <strong>chew</strong>
                         plants?
                     </label>
-                    <select class="main--searchFilters__form--pets__select" id="pets" name="pets">
+                    <select required class="main--searchFilters__form--pets__select" id="pets" name="pets">
                         <option value="">Select...</option>
-                        <option value="no">No/They don't care</option>
-                        <option value="yes">Yes</option>
+                        <option value="false">No/They don't care</option>
+                        <option value="true">Yes</option>
                     </select>
                 </fieldset>
             </form>
@@ -77,9 +78,12 @@
         <section class="main--results">
             <div class="main--results__noResultText">
                 <h2 class="main--results__noResultText--title">No results yet...</h2>
-                <h3 class="main--results__noResultText--subtitle">Use the filters above to find the plant that best fits your environment :)  </h3>
+                <h3 class="main--results__noResultText--subtitle">Use the filters above to find the plant that best fits
+                    your environment :) </h3>
             </div>
-            <img src="images/illustrations/no-results.png" alt="plant vase with question mark" class="main--results__noResultIllustration">
+            <img src="images/illustrations/no-results.png" alt="plant vase with question mark"
+                class="main--results__noResultIllustration">
+            <div class="main--results__container"></div>
         </section>
     </main>
 </body>
