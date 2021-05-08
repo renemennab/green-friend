@@ -18,21 +18,12 @@ import toxic from './images/icons/toxic.svg'
  * water: "rarely" | "regularly"| "daily"}[]} plantsArray
  */
 export default function createPlantElements(plantsArray) {
-    const resultsContainer = document.getElementsByClassName('main--results__container')[0]
-    const containerIcon = document.createElement('img')
-    const containerTitle = document.createElement('h2')
-    const plantsContainer = document.createElement('div')
-    resultsContainer.append(containerIcon, containerTitle, plantsContainer)
-    containerIcon.className = 'main--results__container--icon'
-    containerTitle.className = 'main--results__container--title'
-    plantsContainer.className = 'main--results__container--plants'
-    containerTitle.textContent = 'Our picks for you'
+    const plantsContainer = document.getElementsByClassName('main--results__container--plants')[0]
 
     plantsArray.forEach((plant, index) => {
         // create elements
         const plantContainer = document.createElement('div')
         const plantImageContainer = document.createElement('div')
-
         const plantImage = document.createElement('img')
         const plantName = document.createElement('h4')
         const price = document.createElement('span')
@@ -42,6 +33,7 @@ export default function createPlantElements(plantsArray) {
         const waterIcon = document.createElement('img')
 
         // append elements
+        plantContainer.className = 'main--results__container--plants__plant'
         if (!index) plantContainer.className = 'staffPick'
 
         plantsContainer.append(plantContainer)

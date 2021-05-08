@@ -37,18 +37,21 @@ document.addEventListener('DOMContentLoaded', function () {
 function toggleResults(plantsArray) {
     const noResultsText = document.getElementsByClassName('main--results__noResultText')[0]
     const noResultsIllustration = document.getElementsByClassName('main--results__noResultIllustration')[0]
+    const resultsContainer = document.getElementsByClassName('main--results__container')[0]
     if (plantsArray.length) {
         noResultsText.style.display = 'none'
         noResultsIllustration.style.display = 'none'
+        resultsContainer.style.display = 'block'
     } else {
         noResultsText.style.display = 'block'
         noResultsIllustration.style.display = 'block'
+        resultsContainer.style.display = 'none'
     }
 }
 
 function clearPlantElements() {
-    const resultsContainer = document.getElementsByClassName('main--results__container')[0]
-    resultsContainer.innerHTML = ''
+    const plantsContainer = document.getElementsByClassName('main--results__container--plants')[0]
+    plantsContainer.innerHTML = ''
 }
 
 async function handleSelectChange(requestParams) {
