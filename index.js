@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
     //register events
     form = document.getElementsByClassName('main--searchFilters__form')[0]
     form.addEventListener('submit', event => event.preventDefault())
+    const scrollToTopBtn = document.getElementsByClassName('main--results__container--scrollToTopBtn')[0]
+    scrollToTopBtn.addEventListener('click', () => scrollToTop())
 
     sunSelect = document.getElementsByClassName('main--searchFilters__form--sun__select')[0]
     waterSelect = document.getElementsByClassName('main--searchFilters__form--water__select')[0]
@@ -66,4 +68,11 @@ async function handleSelectChange(requestParams) {
         clearPlantElements()
         toggleResults([])
     }
+}
+
+function scrollToTop() {
+    window.scroll({
+        top: 0,
+        behavior: 'smooth'
+    })
 }

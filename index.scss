@@ -1,7 +1,8 @@
 body {
     --green100: #75bc97;
     --green200: #1e6b4e;
-    --green300: #15573f;
+    --green300: #196146;
+    --green400: #15573f;
     --orange: #fd9872;
     --white: #fff;
     --gray100: #f2f2f2;
@@ -152,21 +153,32 @@ body {
                 &--title {
                     font-size: 55px;
                 }
+                &--scrollToTopBtn {
+                    color: var(--green300);
+                    border-radius: 25px ;
+                    border: 1px solid var(--green300);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    padding: 12px;
+                    margin-top: 60px;
+                    &__arrow {
+                        margin-right: 16px;
+                        width: 12px;
+                    }
+                }
                 &--plants {
                     display: grid;
                     grid-template-columns: 1fr 1fr 1fr 1fr;
                     grid-auto-rows: 245px;
                     gap: 25px 25px;
-                    grid-template-areas:
-                        "staffPick staffPick . ."
-                        "staffPick staffPick . ."
-                        ". . . .";
 
                     > div {
                         background: var(--white);
                         display: grid;
                         grid-template-columns: 1fr 1fr;
-                        grid-auto-rows:6fr 1fr 1fr;
+                        grid-auto-rows: 6fr 1fr 1fr;
                         gap: 0px 0px;
                         padding: 20px;
                         box-sizing: border-box;
@@ -207,22 +219,23 @@ body {
                             grid-area: icons;
                             display: flex;
                             justify-content: space-between;
-                            img{
+                            img {
                                 height: 15px;
-                            &:not(last-child){
-                                margin: 5px;
-                            }}
+                                &:not(last-child) {
+                                    margin: 5px;
+                                }
+                            }
                         }
                     }
 
                     .staffPick {
-                        grid-area: staffPick;
-                        grid-auto-rows:7fr 1fr 1fr;
-
+                        grid-auto-rows: 7fr 1fr 1fr;
+                        grid-column: 1 / span 2;
+                        grid-row: 1 / span 2;
                         grid-template-areas:
-                        "image image"
-                        "title price"
-                        "title icons";
+                            "image image"
+                            "title price"
+                            "title icons";
                         .plantImage {
                             img {
                                 width: 100%;
@@ -236,13 +249,14 @@ body {
                             justify-self: end;
                             font-size: 24px;
                         }
-                        .plantIcons{
+                        .plantIcons {
                             justify-content: flex-end;
-                            img{
+                            img {
                                 height: 25px;
-                            &:not(last-child){
-                                margin: 5px;
-                            }}
+                                &:not(last-child) {
+                                    margin: 5px;
+                                }
+                            }
                         }
                     }
                 }
