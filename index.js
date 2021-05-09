@@ -23,17 +23,14 @@ document.addEventListener('DOMContentLoaded', function () {
     petsSelect = document.getElementsByClassName('main--searchFilters__form--pets__select')[0]
     sunSelect.addEventListener('change', event => {
         requestParams.sun = event.target.value
-        console.log(requestParams)
         handleSelectChange(requestParams)
     })
     waterSelect.addEventListener('change', event => {
         requestParams.water = event.target.value
-        console.log(requestParams)
         handleSelectChange(requestParams)
     })
     petsSelect.addEventListener('change', event => {
         requestParams.pets = event.target.value
-        console.log(requestParams)
         handleSelectChange(requestParams)
     })
 })
@@ -62,7 +59,6 @@ async function handleSelectChange(requestParams) {
     const { sun, water, pets } = requestParams
     if (sun && water && pets) {
         const plantsResponse = await fetchPlantResults(requestParams)
-        console.log(plantsResponse)
         toggleResults(plantsResponse)
         clearPlantElements()
         createPlantElements(plantsResponse)

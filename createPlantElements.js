@@ -61,7 +61,6 @@ export default function createPlantElements(plantsArray) {
             regularly: drop2,
             rarely: drop1
         }
-        console.log(plant.sun)
         petIcon.setAttribute('src', plant.toxicity ? toxic : pet)
         sunIcon.setAttribute('src', sunIcons[plant.sun])
         if (plant.sun === sunIcons.low) {
