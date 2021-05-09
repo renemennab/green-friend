@@ -13,7 +13,7 @@ export function scrollToTop() {
     })
 }
 
-function clearPlantElements() {
+function removePlantsContainerElements() {
     const plantsContainer = document.getElementsByClassName('main--results__container--plants__wrapper--slides')[0]
     plantsContainer.innerHTML = ''
 }
@@ -23,13 +23,13 @@ export async function handleSelectChange(requestParams) {
     if (sun && water && pets) {
         const plantsResponse = await fetchPlantResults(requestParams)
         toggleResults(plantsResponse)
-        clearPlantElements()
+        removePlantsContainerElements()
         createPlantElements(plantsResponse)
         const slider = document.getElementsByClassName('main--results__container--plants')[0],
             sliderItems = document.getElementsByClassName('main--results__container--plants__wrapper--slides')[0]
         if (isMobile()) plantSlider(slider, sliderItems)
     } else {
-        clearPlantElements()
+        removePlantsContainerElements()
         toggleResults([])
     }
 }
