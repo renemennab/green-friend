@@ -1,4 +1,3 @@
-import fetchPlantResults from './fetchPlantResults'
 import createPlantElements from './createPlantElements'
 import plantSlider from './plantSlider'
 
@@ -47,4 +46,16 @@ function toggleResults(plantsArray) {
         noResultsIllustration.style.display = 'block'
         resultsContainer.style.display = 'none'
     }
+}
+
+async function fetchPlantResults(requestParams) {
+    const { sun, water, pets } = requestParams
+    let result
+    if (sun && water && pets) {
+        await fetch(`https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${sun}&water=${water}&pets=${pets}`)
+            .then(response => response.json())
+            .then(data => (result = data))
+    }
+
+    return result
 }
