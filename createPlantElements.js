@@ -7,6 +7,17 @@ import pet from './images/icons/pet.svg'
 import toxic from './images/icons/toxic.svg'
 import { isMobile } from './utils'
 
+const sunIcons = {
+    high: lowSun,
+    low: lowSun,
+    no: noSun
+}
+const waterIcons = {
+    daily: drop3,
+    regularly: drop2,
+    rarely: drop1
+}
+
 /**
  *
  * @param {{id: number,
@@ -34,15 +45,14 @@ export default function createPlantElements(plantsArray) {
         const waterIcon = document.createElement('img')
 
         // append elements
-        plantContainer.className = 'main--results__container--plants__wrapper--slides__plant'
-        if (!index && !isMobile()) plantContainer.classList.add('highlightedElement')
-
         plantsContainer.append(plantContainer)
         plantContainer.append(plantImageContainer, plantName, price, iconsContainer)
         plantImageContainer.append(plantImage)
         iconsContainer.append(petIcon, sunIcon, waterIcon)
 
         // add attribute to elements
+        plantContainer.className = 'main--results__container--plants__wrapper--slides__plant'
+        if (!index && !isMobile()) plantContainer.classList.add('highlightedElement')
         plantImageContainer.className = 'plantImage'
         plantImage.setAttribute('src', plant.url)
         plantName.textContent = plant.name
@@ -51,21 +61,9 @@ export default function createPlantElements(plantsArray) {
         price.className = 'plantPrice'
         iconsContainer.className = 'plantIcons'
 
-        const sunIcons = {
-            high: lowSun,
-            low: lowSun,
-            no: noSun
-        }
-        const waterIcons = {
-            daily: drop3,
-            regularly: drop2,
-            rarely: drop1
-        }
         petIcon.setAttribute('src', plant.toxicity ? toxic : pet)
         sunIcon.setAttribute('src', sunIcons[plant.sun])
-        if (plant.sun === sunIcons.low) {
-            sunIcon.setAttribute('height', '10px')
-        }
+        if (plant.sun === sunIcons.low) sunIcon.setAttribute('height', '10px')
         waterIcon.setAttribute('src', waterIcons[plant.water])
     })
 }
