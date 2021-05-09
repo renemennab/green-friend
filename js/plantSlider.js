@@ -1,3 +1,4 @@
+// solution adapted from https://codepen.io/cconceicao/pen/PBQawy
 export default function plantSlider(wrapper, items) {
     var posX1 = 0,
         posX2 = 0,
