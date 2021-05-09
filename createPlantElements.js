@@ -5,6 +5,7 @@ import lowSun from './images/icons/low-sun.svg'
 import noSun from './images/icons/no-sun.svg'
 import pet from './images/icons/pet.svg'
 import toxic from './images/icons/toxic.svg'
+import { isMobile } from './utils'
 
 /**
  *
@@ -34,7 +35,7 @@ export default function createPlantElements(plantsArray) {
 
         // append elements
         plantContainer.className = 'main--results__container--plants__wrapper--slides__plant'
-        if (!index && window.innerWidth > 600) plantContainer.classList.add('staffPick')
+        if (!index && !isMobile()) plantContainer.classList.add('staffPick')
 
         plantsContainer.append(plantContainer)
         plantContainer.append(plantImageContainer, plantName, price, iconsContainer)
