@@ -187,7 +187,7 @@ body {
                             gap: 25px 25px;
 
                             &__plant,
-                            .staffPick {
+                            .highlightedElement {
                                 background: var(--white);
                                 display: grid;
                                 grid-template-columns: 1fr 1fr;
@@ -241,7 +241,7 @@ body {
                                 }
                             }
 
-                            .staffPick {
+                            .highlightedElement {
                                 grid-auto-rows: 7fr 1fr 1fr;
                                 grid-column: 1 / span 2;
                                 grid-row: 1 / span 2;
@@ -386,7 +386,7 @@ body {
                                         max-height: 200px;
                                     }
 
-                                    &.staffPick {
+                                    &.highlightedElement {
                                         grid-column: unset;
                                         grid-row: unset;
                                     }

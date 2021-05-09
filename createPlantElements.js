@@ -35,7 +35,7 @@ export default function createPlantElements(plantsArray) {
 
         // append elements
         plantContainer.className = 'main--results__container--plants__wrapper--slides__plant'
-        if (!index && !isMobile()) plantContainer.classList.add('staffPick')
+        if (!index && !isMobile()) plantContainer.classList.add('highlightedElement')
 
         plantsContainer.append(plantContainer)
         plantContainer.append(plantImageContainer, plantName, price, iconsContainer)
