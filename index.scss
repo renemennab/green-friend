@@ -163,6 +163,13 @@ body {
                     width: 100%;
                     padding: 12px;
                     margin-top: 60px;
+                    &:hover {
+                        color: white;
+                        background: var(--green400);
+                        path {
+                            stroke: var(--white);
+                        }
+                    }
                     &__arrow {
                         margin-right: 16px;
                         width: 12px;
