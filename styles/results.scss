@@ -1,0 +1,249 @@
+@import "variables";
+
+.main {
+    &--results {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background: var(--gray100);
+        padding: 75px var(--frameSidePadding);
+
+        &__noResultText {
+            width: 440px;
+            color: var(--gray300);
+            &--title {
+                font-size: 45px;
+            }
+            &--subtitle {
+                font-size: 16px;
+                width: 220px;
+                font-weight: normal;
+            }
+        }
+        &__container {
+            display: none;
+            &--icon {
+                width: 160px;
+                height: 80px;
+            }
+            &--title {
+                font-size: 55px;
+            }
+            &--scrollToTopBtn {
+                color: var(--green300);
+                border-radius: 25px;
+                border: 1px solid var(--green300);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                padding: 12px;
+                margin-top: 60px;
+                &:hover {
+                    color: white;
+                    background: var(--green400);
+                    path {
+                        stroke: var(--white);
+                    }
+                }
+                &__arrow {
+                    margin-right: 16px;
+                    width: 12px;
+                }
+            }
+            &--plants {
+                &__wrapper {
+                    &--slides {
+                        display: grid;
+                        grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr) minmax(
+                                200px,
+                                1fr
+                            );
+                        grid-auto-rows: 245px;
+                        gap: 25px 25px;
+
+                        &__plant,
+                        .highlightedElement {
+                            position: relative;
+                            background: var(--white);
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            grid-auto-rows: 6fr 1fr 1fr;
+                            gap: 0px 0px;
+                            padding: 20px;
+                            box-sizing: border-box;
+                            grid-template-areas:
+                                "image image"
+                                "title title"
+                                "price icons";
+                            align-items: center;
+                            
+                            &--staffFavourite {
+                                &__big, &__small{
+                                    position: absolute;
+                                    top: 31px;
+                                    left: 0;
+                                    width: 200px;
+                                    height: 43px;
+                                    background: var(--green100);
+                                    border-bottom-right-radius: 25px;
+                                    border-top-right-radius: 25px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    font-size: 18px;
+                                    color: var(--white);
+                                    font-weight: bold;
+                                }
+
+                                &__small{
+                                    top: 15px;
+                                    width: 120px;
+                                    height: 30px;
+                                    font-size: 13px;
+                                }
+                            }
+                            .plantImage {
+                                grid-area: image;
+                                justify-self: center;
+                                align-self: center;
+                                height: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                img {
+                                    width: 80%;
+                                    max-height: 160px;
+                                }
+                            }
+                            .plantName {
+                                grid-area: title;
+                                justify-self: start;
+                                align-self: center;
+                                color: var(--green200);
+                                margin: 0;
+                                margin-bottom: 10px;
+                            }
+                            .plantPrice {
+                                color: var(--green200);
+                                grid-area: price;
+                                font-weight: bold;
+                                justify-self: start;
+                            }
+                            .plantIcons {
+                                grid-area: icons;
+                                display: flex;
+                                justify-content: space-between;
+                                img {
+                                    height: 15px;
+                                    &:not(last-child) {
+                                        margin: 5px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .highlightedElement {
+                            grid-auto-rows: 7fr 1fr 1fr;
+                            grid-column: 1 / span 2;
+                            grid-row: 1 / span 2;
+                            grid-template-areas:
+                                "image image"
+                                "title price"
+                                "title icons";
+                            .plantImage {
+                                img {
+                                    width: 100%;
+                                    max-height: 350px;
+                                }
+                            }
+                            .plantName {
+                                font-size: 35px;
+                                margin: 0;
+                            }
+                            .plantPrice {
+                                justify-self: end;
+                                font-size: 24px;
+                            }
+                            .plantIcons {
+                                justify-content: flex-end;
+                                img {
+                                    height: 25px;
+                                    &:not(last-child) {
+                                        margin: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $mobileThreshold) {
+    .main {
+        &--results {
+            flex-direction: column;
+            box-sizing: border-box;
+            width: 100%;
+            padding-top: 0;
+            &__noResultText {
+                width: unset;
+                &--subtitle {
+                    width: 100%;
+                }
+            }
+            &__container {
+                --slider-width: 250px;
+                --slider-height: 320px;
+                * {
+                    box-sizing: border-box;
+                }
+                margin-top: 30px;
+                &--plants {
+                    position: relative;
+                    width: var(--slider-width);
+                    height: var(--slider-height);
+                    &__wrapper {
+                        position: relative;
+                        width: var(--slider-width);
+                        height: var(--slider-height);
+                        z-index: 1;
+                        &--slides {
+                            gap: unset;
+                            display: flex;
+                            position: relative;
+                            top: 0;
+                            left: -var(--slider-width);
+                            height: var(--slider-height);
+                            width: 10000px;
+                            &.shifting {
+                                transition: left 0.2s ease-out;
+                            }
+                            &__plant {
+                                width: var(--slider-width);
+                                height: var(--slider-height);
+                                border: 10px solid var(--gray100);
+                                border-radius: 25px;
+                                cursor: pointer;
+                                transition: all 1s;
+                                position: relative;
+                                img {
+                                    height: 100%;
+                                    max-height: 200px;
+                                }
+
+                                &.highlightedElement {
+                                    grid-column: unset;
+                                    grid-row: unset;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import "variables";
+body {
+    --green100: #75bc97;
+    --green200: #1e6b4e;
+    --green300: #196146;
+    --green400: #15573f;
+    --orange: #fd9872;
+    --white: #fff;
+    --gray100: #f2f2f2;
+    --gray200: #a8a8a8;
+    --gray300: #a9a9a9;
+    --gray500: #797979;
+    --frameSidePadding: 20%;
+
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+
+    .main {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: $mobileThreshold) {
+        --frameSidePadding: 10%;
+    }
+}
