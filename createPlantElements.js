@@ -34,7 +34,7 @@ export default function createPlantElements(plantsArray) {
 
         // append elements
         plantContainer.className = 'main--results__container--plants__wrapper--slides__plant'
-        if (!index) plantContainer.className = 'staffPick'
+        if (!index && window.innerWidth > 600) plantContainer.classList.add('staffPick')
 
         plantsContainer.append(plantContainer)
         plantContainer.append(plantImageContainer, plantName, price, iconsContainer)
