@@ -1,10 +1,10 @@
-import drop1 from './images/icons/1-drop.svg'
-import drop2 from './images/icons/2-drops.svg'
-import drop3 from './images/icons/3-drops.svg'
-import lowSun from './images/icons/low-sun.svg'
-import noSun from './images/icons/no-sun.svg'
-import pet from './images/icons/pet.svg'
-import toxic from './images/icons/toxic.svg'
+import drop1 from '../images/icons/1-drop.svg'
+import drop2 from '../images/icons/2-drops.svg'
+import drop3 from '../images/icons/3-drops.svg'
+import lowSun from '../images/icons/low-sun.svg'
+import noSun from '../images/icons/no-sun.svg'
+import pet from '../images/icons/pet.svg'
+import toxic from '../images/icons/toxic.svg'
 import { isMobile } from './utils'
 
 const sunIcons = {

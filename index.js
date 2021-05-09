@@ -1,4 +1,4 @@
-import { handleSelectChange, scrollToTop } from './utils'
+import { handleSelectChange, scrollToTop } from './js/utils'
 
 document.addEventListener('DOMContentLoaded', function () {
     const requestParams = {
