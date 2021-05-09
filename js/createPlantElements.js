@@ -65,5 +65,18 @@ export default function createPlantElements(plantsArray) {
         sunIcon.setAttribute('src', sunIcons[plant.sun])
         if (plant.sun === sunIcons.low) sunIcon.setAttribute('height', '10px')
         waterIcon.setAttribute('src', waterIcons[plant.water])
+
+        if (plant.staff_favorite) {
+            const staffFavouriteContainer = document.createElement('div')
+            plantContainer.append(staffFavouriteContainer)
+            staffFavouriteContainer.textContent = '✨ Staff favorite'
+            if (!index && !isMobile()) {
+                staffFavouriteContainer.className =
+                    'main--results__container--plants__wrapper--slides__plant--staffFavourite__big'
+            } else {
+                staffFavouriteContainer.className =
+                    'main--results__container--plants__wrapper--slides__plant--staffFavourite__small'
+            }
+        }
     })
 }

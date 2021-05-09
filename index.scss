@@ -188,6 +188,7 @@ body {
 
                             &__plant,
                             .highlightedElement {
+                                position: relative;
                                 background: var(--white);
                                 display: grid;
                                 grid-template-columns: 1fr 1fr;
@@ -200,7 +201,32 @@ body {
                                     "title title"
                                     "price icons";
                                 align-items: center;
+                                
+                                &--staffFavourite {
+                                    &__big, &__small{
+                                        position: absolute;
+                                        top: 31px;
+                                        left: 0;
+                                        width: 200px;
+                                        height: 43px;
+                                        background: var(--green100);
+                                        border-bottom-right-radius: 25px;
+                                        border-top-right-radius: 25px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        font-size: 18px;
+                                        color: var(--white);
+                                        font-weight: bold;
+                                    }
 
+                                    &__small{
+                                        top: 15px;
+                                        width: 120px;
+                                        height: 30px;
+                                        font-size: 13px;
+                                    }
+                                }
                                 .plantImage {
                                     grid-area: image;
                                     justify-self: center;
@@ -253,7 +279,6 @@ body {
                                     img {
                                         width: 100%;
                                         max-height: 350px;
-
                                     }
                                 }
                                 .plantName {
