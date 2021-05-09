@@ -1,4 +1,4 @@
-export default function slide(wrapper, items) {
+export default function plantSlider(wrapper, items) {
     var posX1 = 0,
         posX2 = 0,
         posInitial,

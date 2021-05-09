@@ -1,6 +1,6 @@
 import fetchPlantResults from './fetchPlantResults'
 import createPlantElements from './createPlantElements'
-import slide from './plantSlider'
+import plantSlider from './plantSlider'
 
 export function isMobile() {
     return window.innerWidth < 600
@@ -27,7 +27,7 @@ export async function handleSelectChange(requestParams) {
         createPlantElements(plantsResponse)
         const slider = document.getElementsByClassName('main--results__container--plants')[0],
             sliderItems = document.getElementsByClassName('main--results__container--plants__wrapper--slides')[0]
-        if (isMobile()) slide(slider, sliderItems)
+        if (isMobile()) plantSlider(slider, sliderItems)
     } else {
         clearPlantElements()
         toggleResults([])
