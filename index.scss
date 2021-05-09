@@ -155,7 +155,7 @@ body {
                 }
                 &--scrollToTopBtn {
                     color: var(--green300);
-                    border-radius: 25px ;
+                    border-radius: 25px;
                     border: 1px solid var(--green300);
                     display: flex;
                     justify-content: center;
@@ -169,92 +169,100 @@ body {
                     }
                 }
                 &--plants {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr 1fr;
-                    grid-auto-rows: 245px;
-                    gap: 25px 25px;
+                    &__wrapper {
+                        &--slides {
+                            display: grid;
+                            grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr) minmax(
+                                    200px,
+                                    1fr
+                                );
+                            grid-auto-rows: 245px;
+                            gap: 25px 25px;
 
-                    > div {
-                        background: var(--white);
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
-                        grid-auto-rows: 6fr 1fr 1fr;
-                        gap: 0px 0px;
-                        padding: 20px;
-                        box-sizing: border-box;
-                        grid-template-areas:
-                            "image image"
-                            "title title"
-                            "price icons";
-                        align-items: center;
+                            &__plant,
+                            .staffPick {
+                                background: var(--white);
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                grid-auto-rows: 6fr 1fr 1fr;
+                                gap: 0px 0px;
+                                padding: 20px;
+                                box-sizing: border-box;
+                                grid-template-areas:
+                                    "image image"
+                                    "title title"
+                                    "price icons";
+                                align-items: center;
 
-                        .plantImage {
-                            grid-area: image;
-                            justify-self: center;
-                            align-self: center;
-                            height: 100%;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            img {
-                                width: 80%;
-                                // height: 100%;
-                            }
-                        }
-                        .plantName {
-                            grid-area: title;
-                            justify-self: start;
-                            align-self: center;
-                            color: var(--green200);
-                            margin: 0;
-                            margin-bottom: 10px;
-                        }
-                        .plantPrice {
-                            color: var(--green200);
-                            grid-area: price;
-                            font-weight: bold;
-                            justify-self: start;
-                        }
-                        .plantIcons {
-                            grid-area: icons;
-                            display: flex;
-                            justify-content: space-between;
-                            img {
-                                height: 15px;
-                                &:not(last-child) {
-                                    margin: 5px;
+                                .plantImage {
+                                    grid-area: image;
+                                    justify-self: center;
+                                    align-self: center;
+                                    height: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    img {
+                                        width: 80%;
+                                        // height: 100%;
+                                    }
+                                }
+                                .plantName {
+                                    grid-area: title;
+                                    justify-self: start;
+                                    align-self: center;
+                                    color: var(--green200);
+                                    margin: 0;
+                                    margin-bottom: 10px;
+                                }
+                                .plantPrice {
+                                    color: var(--green200);
+                                    grid-area: price;
+                                    font-weight: bold;
+                                    justify-self: start;
+                                }
+                                .plantIcons {
+                                    grid-area: icons;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    img {
+                                        height: 15px;
+                                        &:not(last-child) {
+                                            margin: 5px;
+                                        }
+                                    }
                                 }
                             }
-                        }
-                    }
 
-                    .staffPick {
-                        grid-auto-rows: 7fr 1fr 1fr;
-                        grid-column: 1 / span 2;
-                        grid-row: 1 / span 2;
-                        grid-template-areas:
-                            "image image"
-                            "title price"
-                            "title icons";
-                        .plantImage {
-                            img {
-                                width: 100%;
-                            }
-                        }
-                        .plantName {
-                            font-size: 35px;
-                            margin: 0;
-                        }
-                        .plantPrice {
-                            justify-self: end;
-                            font-size: 24px;
-                        }
-                        .plantIcons {
-                            justify-content: flex-end;
-                            img {
-                                height: 25px;
-                                &:not(last-child) {
-                                    margin: 5px;
+                            .staffPick {
+                                grid-auto-rows: 7fr 1fr 1fr;
+                                grid-column: 1 / span 2;
+                                grid-row: 1 / span 2;
+                                grid-template-areas:
+                                    "image image"
+                                    "title price"
+                                    "title icons";
+                                .plantImage {
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                                .plantName {
+                                    font-size: 35px;
+                                    margin: 0;
+                                }
+                                .plantPrice {
+                                    justify-self: end;
+                                    font-size: 24px;
+                                }
+                                .plantIcons {
+                                    justify-content: flex-end;
+                                    img {
+                                        height: 25px;
+                                        &:not(last-child) {
+                                            margin: 5px;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -327,6 +335,39 @@ body {
                     width: unset;
                     &--subtitle {
                         width: 100%;
+                    }
+                }
+                &__container {
+                    $slider-width: 400px;
+                    $slider-height: 300px;
+                    &--plants {
+                        position: relative;
+                        width: $slider-width;
+                        height: $slider-height;
+                        &__wrapper {
+                            overflow: hidden;
+                            position: relative;
+                            width: $slider-width;
+                            height: $slider-height;
+                            z-index: 1;
+                            &--slides {
+                                display: flex;
+                                position: relative;
+                                top: 0;
+                                left: -$slider-width;
+                                width: 10000px;
+                                &.shifting {
+                                    transition: left 0.2s ease-out;
+                                }
+                                &__plant {
+                                    width: $slider-width;
+                                    height: $slider-height;
+                                    cursor: pointer;
+                                    transition: all 1s;
+                                    position: relative;
+                                }
+                            }
+                        }
                     }
                 }
             }

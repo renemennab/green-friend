@@ -1,5 +1,6 @@
 import fetchPlantResults from './fetchPlantResults'
 import createPlantElements from './createPlantElements'
+import slide from './plantSlider'
 
 document.addEventListener('DOMContentLoaded', function () {
     const requestParams = {
@@ -52,7 +53,7 @@ function toggleResults(plantsArray) {
 }
 
 function clearPlantElements() {
-    const plantsContainer = document.getElementsByClassName('main--results__container--plants')[0]
+    const plantsContainer = document.getElementsByClassName('main--results__container--plants__wrapper--slides')[0]
     plantsContainer.innerHTML = ''
 }
 
@@ -64,6 +65,10 @@ async function handleSelectChange(requestParams) {
         toggleResults(plantsResponse)
         clearPlantElements()
         createPlantElements(plantsResponse)
+        const slider = document.getElementsByClassName('main--results__container--plants')[0],
+            sliderItems = document.getElementsByClassName('main--results__container--plants__wrapper--slides')[0]
+
+        slide(slider, sliderItems)
     } else {
         clearPlantElements()
         toggleResults([])

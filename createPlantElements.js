@@ -18,7 +18,7 @@ import toxic from './images/icons/toxic.svg'
  * water: "rarely" | "regularly"| "daily"}[]} plantsArray
  */
 export default function createPlantElements(plantsArray) {
-    const plantsContainer = document.getElementsByClassName('main--results__container--plants')[0]
+    const plantsContainer = document.getElementsByClassName('main--results__container--plants__wrapper--slides')[0]
 
     plantsArray.forEach((plant, index) => {
         // create elements
@@ -33,7 +33,7 @@ export default function createPlantElements(plantsArray) {
         const waterIcon = document.createElement('img')
 
         // append elements
-        plantContainer.className = 'main--results__container--plants__plant'
+        plantContainer.className = 'main--results__container--plants__wrapper--slides__plant'
         if (!index) plantContainer.className = 'staffPick'
 
         plantsContainer.append(plantContainer)
