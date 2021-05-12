@@ -4,8 +4,8 @@
   "description": "Simple Parcel Sandbox",
   "main": "index.html",
   "scripts": {
-    "dev": "parcel index.html --open",
-    "build": "parcel build --no-minify index.html"
+    "start": "parcel index.html --open --public-url ./ --out-dir docs",
+    "build": "parcel build index.html --public-url ./ --out-dir docs"
   },
   "dependencies": {
     "-": "^0.0.1",
